@@ -1,0 +1,49 @@
+from cgitb import html
+
+
+print ('My pyhthon script') 
+
+top_html = open('./templates/top.html').read() 
+
+bottom_html = open('./templates/bottom.html').read() 
+
+middle_html = open('./content/index.html').read() 
+
+index_html = top_html + middle_html + bottom_html 
+
+  
+open('docs/index.html', 'w+').write(index_html)  
+
+
+
+# ----------------- Project -------------# 
+
+top_html = open('./templates/top.html').read() 
+
+bottom_html = open('./templates/bottom.html').read() 
+
+middle_html = open('./content/project.html').read() 
+
+project_html = top_html + middle_html + bottom_html 
+
+
+open('docs/project.html', 'w+').write(project_html)  
+
+ 
+
+#-------------------Contact-------------#
+
+top_html = open('./templates/top.html').read() 
+
+bottom_html = open('./templates/bottom.html').read() 
+
+middle_html = open('./content/contact.html').read() 
+
+contact_html = top_html + middle_html + bottom_html  
+
+
+open('docs/contact.html', 'w+').write(contact_html)  
+
+
+
+

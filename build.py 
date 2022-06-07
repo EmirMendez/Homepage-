@@ -1,6 +1,8 @@
 from cgitb import html
 
 
+def main(): 
+
 print ('My pyhthon script') 
 
 top_html = open('./templates/top.html').read() 
@@ -14,8 +16,6 @@ index_html = top_html + middle_html + bottom_html
   
 open('docs/index.html', 'w+').write(index_html)  
 
-
-
 # ----------------- Project -------------# 
 
 top_html = open('./templates/top.html').read() 
@@ -26,10 +26,7 @@ middle_html = open('./content/project.html').read()
 
 project_html = top_html + middle_html + bottom_html 
 
-
 open('docs/project.html', 'w+').write(project_html)  
-
- 
 
 #-------------------Contact-------------#
 
@@ -41,8 +38,49 @@ middle_html = open('./content/contact.html').read()
 
 contact_html = top_html + middle_html + bottom_html  
 
-
 open('docs/contact.html', 'w+').write(contact_html)  
+
+return page 
+
+main()
+
+pages = [
+
+    {
+        "filename":"content/index.html",
+        "output":"docs/index.html",
+        "title":"index html",
+    } 
+    {
+        "filename":"content/project.html",
+        "output": "docs/project.html", 
+        "title":"My Projects",
+
+    }
+    {
+        "filename:","content/contact.html",
+        "output":"docs/contact.html",
+        "title":"Contact Page"
+    }
+] 
+
+for page in pages: 
+    print("filename:", page['content/project.html']) 
+    print("output:",page['docs/index.html']) 
+    print("title:",page['index html'])  
+
+    print("filename:", page['content/index.html']) 
+    print("output:",page['docs/project.html']) 
+    print("title:",page['My Projects']) 
+
+    print("filename:", page['content/contact.html']) 
+    print("output:",page['docs/contact.html']) 
+    print("title:",page['Contact Page']) 
+
+
+    
+
+
 
 
 

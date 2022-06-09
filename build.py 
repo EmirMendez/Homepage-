@@ -3,75 +3,78 @@ from cgitb import html
 
 def main(): 
 
-print ('My pyhthon script') 
+    top_html = open('./templates/top.html').read() 
 
-top_html = open('./templates/top.html').read() 
+    bottom_html = open('./templates/bottom.html').read() 
 
-bottom_html = open('./templates/bottom.html').read() 
+    middle_html = open('./content/index.html').read() 
 
-middle_html = open('./content/index.html').read() 
-
-index_html = top_html + middle_html + bottom_html 
+    index_html = top_html + middle_html + bottom_html 
 
   
-open('docs/index.html', 'w+').write(index_html)  
+    open('docs/index.html', 'w+').write(index_html)  
 
-# ----------------- Project -------------# 
+    # ----------------- Project -------------# 
 
-top_html = open('./templates/top.html').read() 
+    top_html = open('./templates/top.html').read() 
 
-bottom_html = open('./templates/bottom.html').read() 
+    bottom_html = open('./templates/bottom.html').read() 
 
-middle_html = open('./content/project.html').read() 
+    middle_html = open('./content/project.html').read() 
 
-project_html = top_html + middle_html + bottom_html 
+    project_html = top_html + middle_html + bottom_html 
 
-open('docs/project.html', 'w+').write(project_html)  
+    open('docs/project.html', 'w+').write(project_html)  
 
-#-------------------Contact-------------#
+    #-------------------Contact-------------#
 
-top_html = open('./templates/top.html').read() 
+    top_html = open('./templates/top.html').read() 
 
-bottom_html = open('./templates/bottom.html').read() 
+    bottom_html = open('./templates/bottom.html').read() 
 
-middle_html = open('./content/contact.html').read() 
+    middle_html = open('./content/contact.html').read() 
 
-contact_html = top_html + middle_html + bottom_html  
+    contact_html = top_html + middle_html + bottom_html  
 
-open('docs/contact.html', 'w+').write(contact_html)  
+    open('docs/contact.html', 'w+').write(contact_html)  
 
 pages = [
 
     {
-        "filename":"content/index.html",
-        "output":"docs/index.html",
-        "title":"index html",
-    } 
+        "filename": "content/index.html",
+        "output": "docs/index.html",
+        "title": "index html",
+    },
+    
     {
-        "filename":"content/project.html",
+        "filename": "content/project.html",
         "output": "docs/project.html", 
-        "title":"My Projects",
-
-    }
+        "title": "My Projects",
+    },
+    
     {
-        "filename:","content/contact.html",
-        "output":"docs/contact.html",
-        "title":"Contact Page"
-    }
+        "filename": "content/contact.html",
+        "output": "docs/contact.html",
+        "title": "Contact Page",
+    },
 ]  
 
 for page in pages: 
-    print("filename:", page['content/project.html']) 
-    print("output:",page['docs/index.html']) 
-    print("title:",page['index html'])  
+    print("filename:", page['filename']) 
+    print("output:", page['output']) 
+    print("title:", page['title'])  
+    
+    top_html = open('./templates/top.html').read() 
 
-    print("filename:", page['content/index.html']) 
-    print("output:",page['docs/project.html']) 
-    print("title:",page['My Projects']) 
+    bottom_html = open('./templates/bottom.html').read() 
 
-    print("filename:", page['content/contact.html']) 
-    print("output:",page['docs/contact.html']) 
-    print("title:",page['Contact Page']) 
+    middle_html = open('./content/contact.html').read() 
+
+    contact_html = top_html + middle_html + bottom_html  
+
+    open('docs/contact.html', 'w+').write(contact_html)  
+
+
 
 
 

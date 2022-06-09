@@ -40,10 +40,6 @@ contact_html = top_html + middle_html + bottom_html
 
 open('docs/contact.html', 'w+').write(contact_html)  
 
-return page 
-
-main()
-
 pages = [
 
     {
@@ -62,7 +58,7 @@ pages = [
         "output":"docs/contact.html",
         "title":"Contact Page"
     }
-] 
+]  
 
 for page in pages: 
     print("filename:", page['content/project.html']) 
@@ -76,6 +72,16 @@ for page in pages:
     print("filename:", page['content/contact.html']) 
     print("output:",page['docs/contact.html']) 
     print("title:",page['Contact Page']) 
+
+
+
+
+
+
+main()
+
+ 
+
 
 
     

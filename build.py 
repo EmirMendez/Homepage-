@@ -1,50 +1,50 @@
 from cgitb import html
 
 
-def index_html():
-    top_html = open('./templates/top.html').read() 
 
-    bottom_html = open('./templates/bottom.html').read() 
+def index_page():
+     template = open('./templates/base.html').read() 
  
-    middle_html = open('./content/index.html').read() 
+     index_content = open('./content/index.html').read()
 
-    index_html = top_html + middle_html + bottom_html 
+     finished_index_page = template.replace("{{content}}", index_content) 
 
-  
-    open('docs/index.html', 'w+').write(index_html)   
+     open('docs/index.html', 'w+').write(finished_index_page) 
 
-def project_html(): 
 
-    top_html = open('./templates/top.html').read() 
+def project_page():
 
-    bottom_html = open('./templates/bottom.html').read() 
+     template = open('./templates/base.html').read()
 
-    middle_html = open('./content/project.html').read() 
+     project_content = open('./content/project.html').read() 
 
-    project_html = top_html + middle_html + bottom_html 
+     finished_project_page = template.replace("{{content}}", project_content)
+     
+     open('docs/project.html', 'w+').write(finished_project_page)   
 
-    open('docs/project.html', 'w+').write(project_html)  
 
-def contact_html():
+def contact_page(): 
 
-    top_html = open('./templates/top.html').read() 
+     template = open('./templates/base.html').read() 
 
-    bottom_html = open('./templates/bottom.html').read() 
+     contact_content = open('./content/contact.html').read() 
 
-    middle_html = open('./content/contact.html').read() 
+     finished_contact_page = template.replace("{{content}}", contact_content)
 
-    contact_html = top_html + middle_html + bottom_html  
+     open('docs/contact.html', 'w+').write(finished_contact_page)  
 
-    open('docs/contact.html', 'w+').write(contact_html)  
+
 
     
 
 def main(): 
 
-    index_html()
-    project_html()
-    contact_html()
-    
+     index_page()  
+
+     project_page() 
+
+     contact_page()
+
 pages = [
 
     {
@@ -72,6 +72,8 @@ for page in pages:
     print("title:", page['title'])  
     
     
+
+
 main()
 
 

@@ -1,20 +1,19 @@
 from cgitb import html
 
 
-def main(): 
-
+def index_html():
     top_html = open('./templates/top.html').read() 
 
     bottom_html = open('./templates/bottom.html').read() 
-
+ 
     middle_html = open('./content/index.html').read() 
 
     index_html = top_html + middle_html + bottom_html 
 
   
-    open('docs/index.html', 'w+').write(index_html)  
+    open('docs/index.html', 'w+').write(index_html)   
 
-    # ----------------- Project -------------# 
+def project_html(): 
 
     top_html = open('./templates/top.html').read() 
 
@@ -26,7 +25,7 @@ def main():
 
     open('docs/project.html', 'w+').write(project_html)  
 
-    #-------------------Contact-------------#
+def contact_html():
 
     top_html = open('./templates/top.html').read() 
 
@@ -38,6 +37,14 @@ def main():
 
     open('docs/contact.html', 'w+').write(contact_html)  
 
+    
+
+def main(): 
+
+    index_html()
+    project_html()
+    contact_html()
+    
 pages = [
 
     {
@@ -64,26 +71,10 @@ for page in pages:
     print("output:", page['output']) 
     print("title:", page['title'])  
     
-    top_html = open('./templates/top.html').read() 
-
-    bottom_html = open('./templates/bottom.html').read() 
-
-    middle_html = open('./content/contact.html').read() 
-
-    contact_html = top_html + middle_html + bottom_html  
-
-    open('docs/contact.html', 'w+').write(contact_html)  
-
-
-
-
-
-
-
-
+    
 main()
 
- 
+
 
 
 
